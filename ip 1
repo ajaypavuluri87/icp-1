@@ -1,0 +1,21 @@
+def string_alternative(full_name): 
+    return full_name[::2]  # Slices every other character starting from index 0 
+ 
+    # Taking the input from the user def main(): 
+    First_name = input("Enter your first name: ") #user-input1 
+    Last_name = input("Enter your last name: ")  #user-input2 
+ 
+    # Get the full name 
+    Full_name = First_name+Last_name # here + is used to concatenate two strings 
+    print("Full Name:", Full_name) 
+ 
+    # Get every other character from the full name     alternative_str = string_alternative(Full_name) 
+    print("Every other character of Full Name:", alternative_str) 
+ 
+if _name=="main_":     main() 
+ 
+Result: 
+Enter your first name: Ajay Kumar 
+Enter your last name: Pavuluri 
+Full Name: Ajay KumarPavuluri 
+Every other character of Full Name: Aa Uapvlr 
