@@ -1,0 +1,30 @@
+with open('input.txt', 'r') as file:  # to read words in the given input file       lines = file.readlines() 
+ 
+wc = {} 
+ 
+for line in lines:   # used for loop to process each line 
+                            # the below function strip() is used to remove the                             white spacesand i have also used the split() function to split the line into words 
+    words = line.strip().split()     for word in words: 
+        
+        if word in wc: 
+            wc[word] += 1         else: 
+            wc[word] = 1 
+ 
+                          # again, opening the file with write permission where we            will pass two arguments here the first one is "out.txt " which the filename we are creating and the letter 'w' is the permission to write into a file 
+ 
+with open('out.txt', 'w') as ou: 
+                         #The original lines are written to the output file as they are in the input.txt file.     ou.writelines(lines) 
+ 
+                         # \n is used to seprate the words 
+ 
+    ou.write('\nwc:\n')     for word, count in wc.items(): 
+         ou.write(f'{word}: {count}\n') 
+ 
+                    # the below lines are written to view the output in the terminal or output panel 
+ 
+with open('out.txt', 'r') as ou: 
+    print(ou.read()) 
+ 
+Result: Input.txt: 
+      i am a very good boy        i am very bad boy Output.txt:       wc:          i: 2         am: 2         a: 1         very: 2        good: 1        boy: 2 
+       bad: 1 
