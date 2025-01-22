@@ -1,0 +1,39 @@
+1.Nested Interactive loop:
+L1 = []
+n = int(input("Enter the number of customers: ")) # this line is written to
+read the input from the user
+for i in range(n):
+ height = float(input(f"Enter height for customer {i+1} in inches: "))
+ L1.append(height)
+ # The below i have used a nested loop to convert the
+heights to centimeters
+L2 = []
+for height in L1:
+ cm = height * 2.54 # the value 2.54 used for the conversion
+ L2.append(round(cm, 2))
+ # The below line prints the output
+print("Heights in centimeters:", L2)
+Result:
+Enter the number of customers: 4
+Enter height for customer 1 in inches: 150
+Enter height for customer 2 in inches: 155
+Enter height for customer 3 in inches: 145
+Enter height for customer 4 in inches: 148
+Heights in centimeters: [381.0, 393.7, 368.3, 375.92]
+2.List Comprehension:
+# the below line reads the heights inputs in inches from the user
+n = int(input(" enter the No customers "))
+L1 = [float(input(f"Enter the height of customer {i+1} in inches: ")) for i
+in range(n)]
+# Convert heights to centimeters using list comprehension
+L2 = [round(height * 2.54, 2) for height in L1] # this line converts the
+heights to centimeters by using the list comprehesion
+# The below line is used to print the converted values
+print("Heights in CM's:", L2)
+Result:
+enter the No customers: 4
+Enter the height of customer 1 in inches: 150
+Enter the height of customer 2 in inches: 155
+Enter the height of customer 3 in inches: 145
+Enter the height of customer 4 in inches: 148
+Heights in CM's: [381.0, 393.7, 368.3, 375.92]
